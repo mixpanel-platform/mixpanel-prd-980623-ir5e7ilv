@@ -81,7 +81,8 @@
             })
             result[key]['conversion'] = String(infinity(result[key]['installed'] / result[key]['downloaded'] * 100).toFixed(1)) + "%"
             result[key]['aov'] = "$" + String(infinity(result[key]['revenue'] / result[key]['orders']).toFixed(2))
-            result[key]['cr'] = String(infinity(result[key]['orders'] / result[key]['installed'] * 100).toFixed(2)) + "%"
+            result[key]['cr'] = infinity(result[key]['orders'] / result[key]['installed'] * 100).toFixed(2)
+            result[key]['cr-string'] = String(result[key]['cr']) + "%"
             result[key]['trial'] = "$" + String(infinity(result[key]['cr'] * result[key]['aov']* 100).toFixed(2))
             result[key]['revenue'] = "$" + String(result[key]['revenue'].toFixed(2))
           })
@@ -103,7 +104,7 @@
                 { title: "Orders", data: 'orders' },
                 { title: "Revenue", data: 'revenue' },
                 { title: "AOV - Rev/Orders", data: "aov" },
-                { title: "CR Rate", data: "cr" },
+                { title: "CR Rate", data: "cr-string" },
                 { title: "Trial", data: "trial" }
               ]
         });
