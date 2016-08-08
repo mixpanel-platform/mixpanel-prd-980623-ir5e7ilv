@@ -84,7 +84,7 @@
             result[key]['aov-string'] = "$" + String(result[key]['aov'].toFixed(2))
             result[key]['cr'] = infinity(result[key]['orders'] / result[key]['installed'] * 100)
             result[key]['cr-string'] = String(result[key]['cr'].toFixed(2)) + "%"
-            result[key]['trial'] = "$" + String(infinity(result[key]['cr'] * result[key]['aov']* 100).toFixed(2))
+            result[key]['trial'] = "$" + String(infinity(result[key]['cr'] * result[key]['aov']).toFixed(2))
             result[key]['revenue'] = "$" + String(result[key]['revenue'].toFixed(2))
           })
           return result
